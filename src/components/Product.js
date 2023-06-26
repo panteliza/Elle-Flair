@@ -4,8 +4,12 @@ import { BsPlus, BsEyeFill } from 'react-icons/bs';
 import { CartContext } from '../contexts/CartContext';
 
 const Product = ({ product }) => {
-  const { addToCart, cartCount } = useContext(CartContext);
+  const { addToCart } = useContext(CartContext);
   const { id, image, category, title, price } = product;
+
+  const handleAddToCart = () => {
+    addToCart(product, id);
+  };
 
   return (
     <div>
@@ -21,7 +25,7 @@ const Product = ({ product }) => {
         </div>
         {/* button */}
         <div className="absolute top-6 -right-11 group-hover:right-5 p-2 flex flex-col items-center justify-center gap-y-2 opacity-0 group-hover:opacity-100 transition-all duration-300">
-          <button onClick={() => addToCart(product, id)}>
+          <button onClick={handleAddToCart}>
             <div className="flex justify-center items-center text-white w-12 h-12 bg-red-500">
               <BsPlus className="text-3xl" />
             </div>

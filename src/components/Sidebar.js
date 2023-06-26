@@ -16,10 +16,8 @@ const Sidebar = () => {
 
   // Calculate grand total
   const grandTotal = cart.reduce((total, item) => {
-    return Number(total + item.price * item.quantity) ;
-
-  }, 0);
-
+    return total + item.price * item.amount;
+  }, 0).toFixed(2); // Fix the decimal places to two digits
 
   const handleClearCart = () => {
     clearCart();
