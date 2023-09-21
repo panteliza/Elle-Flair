@@ -17,7 +17,7 @@ const Sidebar = () => {
   // Calculate grand total
   const grandTotal = cart.reduce((total, item) => {
     return total + item.price * item.amount;
-  }, 0).toFixed(2); // Fix the decimal places to two digits
+  }, 0).toFixed(2);
 
   const handleClearCart = () => {
     clearCart();
@@ -42,7 +42,7 @@ const Sidebar = () => {
               <IoMdArrowForward className="text-2xl" />
             </div>
           </div>
-          <div className="cart-items">
+          <div className="cart-items" style={{ maxHeight: '500px', overflowY: 'auto' }}>
             {cart.map((item) => (
               <CartItem key={item.id} item={item} />
             ))}

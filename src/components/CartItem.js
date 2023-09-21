@@ -32,15 +32,17 @@ const CartItem = ({ item }) => {
 
   return (
     <div className="flex">
-      <div className="w-full min-h-[150px] flex items-center gap-x-4">
+      <div className="w-full min-h-[150px] flex items-center gap-x-4 ">
         <Link to={`/product/${id}`}>
-          <img className="max-w-[80px]" src={image} alt="" />
+          <img className="max-w-[80px] " src={image} alt="" />
         </Link>
         <div className="flex-grow">
-          <div className="flex justify-between items-center">
+          <div className="flex justify-between items-center ">
+            <div className=' w-3/4'>
             <Link to={`/product/${id}`}>{title}</Link>
+            </div>
             <IoMdClose
-              className="cursor-pointer text-[40px]"
+              className="cursor-pointer text-[20px] text-red-700" // Set a fixed size and color
               onClick={handleRemoveItem}
             />
           </div>
@@ -53,7 +55,7 @@ const CartItem = ({ item }) => {
               />
               <span>{quantity}</span>
               <AiOutlinePlus
-                className="cursor-pointer  bg-yellow-400"
+                className="cursor-pointer bg-yellow-400"
                 onClick={handleIncrease}
               />
             </div>
