@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
-import { IoMdArrowForward } from 'react-icons/io';
+import { IoMdArrowBack } from 'react-icons/io';
 import { AiOutlineDelete } from 'react-icons/ai';
 import { SidebarContext } from '../contexts/SidebarContext';
 import { CartContext } from '../contexts/CartContext';
@@ -11,7 +11,7 @@ const Sidebar = () => {
   const { cart, clearCart, cartCount } = useContext(CartContext);
 
   const handleArrowClick = () => {
-    handleClose(); // Close the sidebar when arrow is clicked
+    handleClose(); // Close the sidebar when the arrow is clicked
   };
 
   // Calculate grand total
@@ -29,35 +29,41 @@ const Sidebar = () => {
         <div
           className={`${
             isOpen ? 'right-0' : '-right-full'
-          }w-full bg-white fixed top-0 h-full shadow-2xl md:w-[35vw] xl:max-w-[30vw] transition-all duration-300 z-20 px-4 lg:px-[35px]`}
+          }w-full bg-white fixed top-0 h-full shadow-2xl md:w-[35vw] xl:max-w-[30vw] transition-all duration-300 z-20 px-4 lg:px-[35px]  flex flex-col`}
         >
-          <div className="flex items-center justify-between py-6 border-b">
-            <div className="uppercase text-sm font-semibold">
-              Shopping Bag ({cartCount})
-            </div>
+          <div className="flex items-center justify-between py-6 border-b ">
+            
             <div
               onClick={handleArrowClick}
               className="cursor-pointer w-8 h-8 flex justify-center items-center"
             >
-              <IoMdArrowForward className="text-2xl" />
+              <IoMdArrowBack className="text-2xl" />
             </div>
+            <div className="uppercase text-sm font-semibold">
+              Shopping Bag ({cartCount})
+            </div>
+
           </div>
-          <div className="cart-items" style={{ maxHeight: '500px', overflowY: 'auto' }}>
+          <div className="cart-items" style={{ maxHeight: '350px', overflowY: 'auto' }}>
             {cart.map((item) => (
               <CartItem key={item.id} item={item} />
             ))}
           </div>
-          <div className="flex justify-between">
-            <div className="flex py-4">
-              <div>Grand Total:</div>
-              <div>${grandTotal}</div>
-            </div>
-            <div className="flex items-center justify-end">
+
+          <div className='mt-auto mb-3 flex flex-col gap-2'>
+            <div className='flex py-4 justify-between'>
+              <div className="flex py-4">
+                <div className='font-semibold'>Grand Total: </div>
+                <div className='font-semibold'>${grandTotal}</div>
+              </div>
               <AiOutlineDelete
                 className="text-red-700 text-lg cursor-pointer"
                 onClick={handleClearCart}
               />
             </div>
+
+            <button className='text-center w-full bg-gray-400 py-2'>View Cart</button>
+            <button className='text-center w-full bg-black text-white py-2'>Checkout</button>
           </div>
         </div>
       )}

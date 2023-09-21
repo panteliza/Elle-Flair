@@ -6,14 +6,16 @@ import Sidebar from './components/Sidebar'
 
 import Footer from './components/Footer'
 import Header from './components/Header'
+import Hero from './components/Hero';
 const App = () => {
   return (
   <div className='overflow-hidden'>
     <Router>
       <Header/>
+      <Hero/>
       <Routes>
         <Route path='/' element={<Home/>}/>
-        <Route path='/product/:id' element={<ProductDetails/>}/>
+        <Route path='/products/:id' element={<ProductDetails/>}/>
       </Routes>
       <Sidebar/>
       <Footer/>
