@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/Elle-Flair/static/css/main.2e308b69.css",
+    "main.js": "/Elle-Flair/static/js/main.4bfd092b.js",
+    "static/media/elu-removebg-preview.png": "/Elle-Flair/static/media/elu-removebg-preview.b180c57b3d233b0b48dc.png",
+    "static/media/bg_hero.svg": "/Elle-Flair/static/media/bg_hero.cd5c9e83759e74a20d2b.svg",
+    "index.html": "/Elle-Flair/index.html",
+    "main.2e308b69.css.map": "/Elle-Flair/static/css/main.2e308b69.css.map",
+    "main.4bfd092b.js.map": "/Elle-Flair/static/js/main.4bfd092b.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.2e308b69.css",
+    "static/js/main.4bfd092b.js"
+  ]
+}
