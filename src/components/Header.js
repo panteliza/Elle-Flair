@@ -17,7 +17,7 @@ const Header = () => {
   return (
     <>
       <header className="bg-pink-200 fixed backdrop-blur-2xl w-full z-20 flex justify-between h-14 px-[70px] items-center">
-        <Link to='/'>
+        <Link to='/Elle-Flair'>
         <GiHanger className="text-2xl" />
         </Link>
         <div onClick={handleBagClick} className="cursor-pointer flex relative">
