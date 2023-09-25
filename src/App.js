@@ -15,7 +15,7 @@ const App = () => {
       <Hero/>
       <Routes>
         <Route path='/' element={<Home/>}/>
-        <Route path='/elle-flair' element={<Home/>}/>
+        <Route path='/Elle-flair' element={<Home/>}/>
         <Route path='/products/:id' element={<ProductDetails/>}/>
       </Routes>
       <Sidebar/>
