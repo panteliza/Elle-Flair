@@ -6,7 +6,7 @@ const Footer = () => {
 <footer className='bg-pink-200 py-12 backdrop-blur-2xl '>
   <div className='container mx-auto'>
     <p className='text-gray-800 text-center'>
-      Copyright &copy; Elle-Flair 2023. All rights reserved.
+      Copyright &copy; Trendify 2023. All rights reserved.
     </p>
    
   </div>
